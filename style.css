@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
-  height: 1200px;
+  min-height: 3000px;
 }
 
 /* ヘッダー */
