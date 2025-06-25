@@ -7,6 +7,7 @@
   function handleScroll() {
     const currentScroll = window.pageYOffset;
 
+    // fixedheader の表示・非表示（上スクロール時に表示）
     if (currentScroll <= 25) {
       header.classList.remove('is-show');
     } else if (currentScroll < lastScroll) {
@@ -15,14 +16,20 @@
       header.classList.remove('is-show');
     }
 
+    // vector2 の縮小処理
     if (vector) {
-      vector.classList.toggle('is-show2', currentScroll > 1);
+      if (currentScroll > 1) {
+        vector.classList.add('is-show2');
+      } else {
+        vector.classList.remove('is-show2');
+      }
     }
 
     lastScroll = currentScroll;
     ticking = false;
   }
 
+  // スクロールイベント最適化
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(handleScroll);
@@ -30,5 +37,6 @@
     }
   });
 
+  // 初期状態を window.onload で確実に実行
   window.addEventListener('load', handleScroll);
 })();
