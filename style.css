@@ -131,22 +131,22 @@ header nav ul {
   filter: invert(100%);
 }
 
+/* ↓ fixedheader のスタイル */
 #fixedheader {
+  position: fixed;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  z-index: 9999; /* 上に表示させるために十分高い値 */
   background-color: #fff;
   border-bottom: 1px solid #cdcbcb;
-  position: fixed;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
-  top: -150px;
   transition: top 0.5s ease;
-  pointer-events: none;
-  z-index: 9999; /* ← 重ね順を明確に */
-}
+  /* pointer-events: none; ← 一時的に無効化してテスト */
 }
 
 .header-img2 {
