@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 70.87">
+  <!-- Generator: Adobe Illustrator 29.6.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 207)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: FuturaPT-Book, 'Futura PT';
+        font-size: 14.7px;
+      }
+
+      .st0, .st1 {
+        fill: #fff;
+      }
+
+      .st0, .st2 {
+        isolation: isolate;
+      }
+
+      .st3 {
+        display: none;
+        fill: #231815;
+      }
+
+      .st4 {
+        stroke-miterlimit: 10;
+      }
+
+      .st4, .st5 {
+        fill: none;
+        stroke: #fff;
+      }
+
+      .st5 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <rect class="st3" y="-21.67" width="1920" height="114.21"/>
+  <g id="_H2_--_Contact_Us" class="st2">
+    <g class="st2">
+      <g class="st2">
+        <g class="st2">
+          <text class="st0" transform="translate(1793.46 39.72)"><tspan x="0" y="0">+ Contact Us</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="menu">
+    <g id="_H2_--Menu" class="st2">
+      <g class="st2">
+        <g class="st2">
+          <g class="st2">
+            <text class="st0" transform="translate(100.79 40.72)"><tspan x="0" y="0">Menu</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Icon" class="st5" d="M55,35.42h21.27M55,26.48h21.27M55,44.36h21.27"/>
+  </g>
+  <g id="_グループ_2">
+    <g id="_H2_--Search" class="st2">
+      <g class="st2">
+        <g class="st2">
+          <g class="st2">
+            <text class="st0" transform="translate(273.44 40.88)"><tspan x="0" y="0">Search</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="_グループ_1">
+      <path id="Icon-2" class="st1" d="M240.35,25.26c4.91.12,8.78,4.19,8.68,9.09.11,4.91-3.78,8.97-8.68,9.09-4.91-.12-8.78-4.19-8.68-9.09-.11-4.91,3.78-8.97,8.68-9.09ZM240.35,42.53c4.4-.12,7.86-3.78,7.76-8.18.11-4.4-3.36-8.06-7.76-8.18-4.4.12-7.87,3.78-7.76,8.18-.11,4.4,3.36,8.06,7.76,8.18Z"/>
+      <path id="Icon-3" class="st1" d="M250.62,45.61c-.13,0-.25-.06-.33-.15l-4.47-4.69c-.17-.18-.17-.48.02-.65s.48-.17.65.02l4.47,4.69c.17.18.17.48-.02.65-.08.08-.2.13-.32.13h0Z"/>
+    </g>
+  </g>
+  <g id="_H2_--Cart" class="st2">
+    <g class="st2">
+      <g class="st2">
+        <g class="st2">
+          <text class="st0" transform="translate(468.3 39.72)"><tspan x="0" y="0">Cart</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="bag">
+    <path id="_パス_3" class="st4" d="M435.54,29.76h4.06v18.25h-17.85v-18.25h13.8,0Z"/>
+    <path id="_パス_4" class="st4" d="M426.61,32.19v-5.27c0-2.24,1.82-4.06,4.06-4.06s4.06,1.82,4.06,4.06v5.27"/>
+  </g>
+</svg>
