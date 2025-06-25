@@ -93,14 +93,13 @@ header nav ul {
   position: absolute;
   top: 0;
   left: 50%;
-  /* ← 中央基準にする */
   transform: translateX(-50%);
-  /* ← 完全に中央に配置 */
   width: 100vw;
   height: 1080px;
   object-fit: cover;
   display: block;
-  z-index: 1;
+  z-index: 0; /* ← 低くする */
+}
 
 
 
@@ -141,12 +140,13 @@ header nav ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  z-index: 10;
   padding: 10px 20px;
   box-sizing: border-box;
   top: -150px;
   transition: top 0.5s ease;
   pointer-events: none;
+  z-index: 9999; /* ← 重ね順を明確に */
+}
 }
 
 .header-img2 {
