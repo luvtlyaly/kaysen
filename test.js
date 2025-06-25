@@ -1,22 +1,24 @@
-(() => {
+window.onload = () => {
   const header = document.getElementById('fixedheader');
   const vector = document.getElementById('vector2');
+
   let lastScroll = window.pageYOffset;
   let ticking = false;
 
   function handleScroll() {
     const currentScroll = window.pageYOffset;
 
-    // fixedheaderの表示切り替え
+    // fixedheader 表示制御（上スクロールで表示、下スクロールで非表示）
     if (currentScroll <= 25) {
       header.classList.remove('is-show');
-    } else if (currentScroll < lastScroll) {
-      header.classList.add('is-show'); // 上スクロール
-    } else {
-      header.classList.remove('is-show'); // 下スクロール
+    } else if (currentScroll < lastScroll - 5) {
+      // -5 でわずかなブレを無視（安定性向上）
+      header.classList.add('is-show');
+    } else if (currentScroll > lastScroll + 5) {
+      header.classList.remove('is-show');
     }
 
-    // vector2の表示切り替え
+    // vector2 ロゴ縮小制御
     if (vector) {
       if (currentScroll > 1) {
         vector.classList.add('is-show2');
@@ -29,6 +31,7 @@
     ticking = false;
   }
 
+  // スクロールイベントを最適化して呼び出し
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(handleScroll);
@@ -36,6 +39,6 @@
     }
   });
 
-  // ページ読み込み完了後に初回呼び出し
-  window.addEventListener('load', handleScroll);
-})();
+  // 初期スクロール状態を反映
+  handleScroll();
+};
