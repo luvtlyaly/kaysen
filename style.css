@@ -89,16 +89,14 @@ header nav ul {
   }
 }
 
-.web .TOPPAGEIMG {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 1080px;
-  object-fit: cover;
+.TOPPAGEIMG {
   display: block;
-  z-index: 0; /* ← 低くする */
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  position: relative; /* absoluteだとheightが潰れやすい */
 }
 
 
@@ -131,7 +129,6 @@ header nav ul {
   filter: invert(100%);
 }
 
-/* ↓ fixedheader のスタイル */
 #fixedheader {
   top: 0 !important;
   pointer-events: auto !important;
@@ -148,7 +145,6 @@ header nav ul {
   padding: 10px 20px;
   box-sizing: border-box;
   transition: top 0.5s ease;
-  /* pointer-events: none; ← 一時的に無効化してテスト */
 }
 
 .header-img2 {
@@ -180,7 +176,6 @@ header nav ul {
 
 #fixedheader.is-show {
   top: 0;
-  pointer-events: auto;
 }
 
 .footer {
