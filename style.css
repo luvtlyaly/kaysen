@@ -4,6 +4,11 @@ body {
   font-family: "Futura PT", Futura, "Yu Gothic Pr6N", "Yu Gothic", "游ゴシック体", "Meiryo", sans-serif;
 }
 
+body, html {
+  height: auto;
+  min-height: 100%;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
