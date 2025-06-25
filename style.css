@@ -133,6 +133,8 @@ header nav ul {
 
 /* ↓ fixedheader のスタイル */
 #fixedheader {
+  top: 0 !important;
+  pointer-events: auto !important;
   position: fixed;
   top: -150px;
   left: 0;
