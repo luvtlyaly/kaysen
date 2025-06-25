@@ -1,44 +1,40 @@
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('fixedheader');
-  const vector = document.getElementById('vector2');
+  const vector2 = document.getElementById('vector2');
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  let rafId = null;
 
-  let lastScroll = window.pageYOffset;
-  let ticking = false;
-
-  function handleScroll() {
-    const currentScroll = window.pageYOffset;
-
-    // fixedheader 表示制御（上スクロールで表示、下スクロールで非表示）
-    if (currentScroll <= 25) {
-      header.classList.remove('is-show');
-    } else if (currentScroll < lastScroll - 5) {
-      // -5 でわずかなブレを無視（安定性向上）
-      header.classList.add('is-show');
-    } else if (currentScroll > lastScroll + 5) {
-      header.classList.remove('is-show');
-    }
-
-    // vector2 ロゴ縮小制御
-    if (vector) {
-      if (currentScroll > 1) {
-        vector.classList.add('is-show2');
-      } else {
-        vector.classList.remove('is-show2');
-      }
-    }
-
-    lastScroll = currentScroll;
-    ticking = false;
-  }
-
-  // スクロールイベントを最適化して呼び出し
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
-  });
+    // スクロールイベント発生時に前のフレーム予約をキャンセルし、新たに予約
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const currentY = window.pageYOffset || document.documentElement.scrollTop;
 
-  // 初期スクロール状態を反映
-  handleScroll();
-};
+      // fixedheaderの表示・非表示制御
+      if (currentY > 25) {
+        if (currentY < lastScrollY) {
+          // 上方向スクロール -> ヘッダー非表示
+          header.classList.remove('is-show');
+        } else if (currentY > lastScrollY) {
+          // 下方向スクロール -> ヘッダー表示
+          header.classList.add('is-show');
+        }
+      } else {
+        // 閾値25px以内なら常に非表示
+        header.classList.remove('is-show');
+      }
+
+      // vector2のサイズ制御
+      if (currentY >= 1) {
+        // 1px以上スクロールで縮小クラス付与
+        vector2.classList.add('is-show2');
+      } else {
+        // ページ先頭付近ではクラス除去（元サイズ）
+        vector2.classList.remove('is-show2');
+      }
+
+      // 次回比較用に前回のスクロール位置を保存
+      lastScrollY = currentY;
+    });
+  }, { passive: true });
+});
