@@ -1,37 +1,38 @@
-(function () {
-  const fh = document.getElementById('fixedheader');
-  const isUp = (function () {
-    const scrollElement = document.scrollingElement;
-    let flag, prePoint = 0, scrollPoint;
-    return function () {
-      scrollPoint = scrollElement.scrollTop;
-      flag = prePoint > scrollPoint ? true : false;
-      prePoint = scrollPoint;
-      return flag;
+(() => {
+  const header = document.getElementById('fixedheader');
+  let lastScroll = 0;
+  let ticking = false;
+
+  function onScroll() {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 25) {
+      header.classList.remove('is-show');
+    } else if (currentScroll > lastScroll) {
+      // 下スクロール → 表示
+      header.classList.add('is-show');
+    } else {
+      // 上スクロール → 非表示
+      header.classList.remove('is-show');
     }
-  }());
+
+    lastScroll = currentScroll;
+    ticking = false;
+  }
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 25) {
-      if (isUp()) {
-        fh.classList.remove('is-show');
-      } else {
-        fh.classList.add('is-show');
-      }
-    } else {
-      fh.classList.remove('is-show');
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
     }
   });
-}());
+})();
 
-(function () {
-  const fh = document.getElementById('vector2');
-  if (!fh) return;
+(() => {
+  const logo = document.getElementById('vector2');
+  if (!logo) return;
+
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 1) {
-      fh.classList.add('is-show2');
-    } else {
-      fh.classList.remove('is-show2');
-    }
+    logo.classList.toggle('is-show2', window.pageYOffset > 1);
   });
-}());
+})();
