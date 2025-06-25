@@ -147,6 +147,7 @@ header nav ul {
   top: -150px;
   transition: top 0.5s ease;
   vertical-align: middle;
+  pointer-events: none;
 }
 
 .header-img2 {
@@ -178,6 +179,7 @@ header nav ul {
 
 #fixedheader.is-show {
   top: 0;
+  pointer-events: auto;
 }
 
 .footer {
