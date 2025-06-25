@@ -7,16 +7,16 @@
   function handleScroll() {
     const currentScroll = window.pageYOffset;
 
-    // fixedheader の表示・非表示（上スクロール時に表示）
+    // fixedheaderの表示切り替え
     if (currentScroll <= 25) {
       header.classList.remove('is-show');
     } else if (currentScroll < lastScroll) {
-      header.classList.add('is-show');
+      header.classList.add('is-show'); // 上スクロール
     } else {
-      header.classList.remove('is-show');
+      header.classList.remove('is-show'); // 下スクロール
     }
 
-    // vector2 の縮小処理
+    // vector2の表示切り替え
     if (vector) {
       if (currentScroll > 1) {
         vector.classList.add('is-show2');
@@ -29,7 +29,6 @@
     ticking = false;
   }
 
-  // スクロールイベント最適化
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(handleScroll);
@@ -37,6 +36,6 @@
     }
   });
 
-  // 初期状態を window.onload で確実に実行
+  // ページ読み込み完了後に初回呼び出し
   window.addEventListener('load', handleScroll);
 })();
