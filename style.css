@@ -125,7 +125,7 @@ header nav ul {
   transform: translateX(-50%);
   width: 500px;
   z-index: 50;
-  transition: all 0.2s ease;
+  transition: width 0.3s ease
 }
 
 #vector2.is-show2 {
@@ -187,7 +187,8 @@ header nav ul {
 }
 
 #fixedheader.is-show {
-  top: 0;
+  transform: translateY(0);   /* 画面内にスライドイン */
+  pointer-events: auto;       /* クリック操作を有効化 */
 }
 
 .footer {
