@@ -135,21 +135,28 @@ header nav ul {
 }
 
 #fixedheader {
-  top: 0 !important;
-  pointer-events: auto !important;
   position: fixed;
-  top: -150px;
+  top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999; /* 上に表示させるために十分高い値 */
+  z-index: 9999;
   background-color: #fff;
-  border-bottom: 1px solid #cdcbcb;
+  border-bottom: 1px solid #dcdcdc;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   box-sizing: border-box;
-  transition: top 0.5s ease;
+
+  /* ヘッダーを画面外上部に配置し非表示に */
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  /* 非表示中はクリックイベントを無効化 */
+  pointer-events: none;
+
+  /* パフォーマンス向上のためのヒント */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
 }
 
 .header-img2 {
